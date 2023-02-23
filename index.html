@@ -4,7 +4,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
   * {box-sizing: border-box}
-  /* Set height of body and the document to 100% */
 body, html {
   height: 100%;
   margin: 0;
@@ -17,8 +16,9 @@ body, html {
   color: black;
   float: left;
   border: 1rem solid #778;
-  outline: none;
-  cursor: pointer;
+  outline: 2px ridge rgba(220, 50, 50, 0.6);
+border-radius: .7rem;;
+  cursor: grabbing;
   padding: 14px 16px;
   font-size: 17px;
   width: 33.33%;
@@ -34,6 +34,12 @@ body, html {
   display: none;
   padding: 100px 20px;
   height: 100%;
+  background: #fff none repeat scroll 0 0;
+  left: 380px;
+  padding: 15px;
+  position: absolute;
+  top: 140px;
+  width: 60%;
 }
 
 #Home {background-color: white;}
@@ -47,13 +53,60 @@ body, html {
 <button class="tablink" onclick="openPage('Publications', this, 'white')">Publications</button>
 <button class="tablink" onclick="openPage('Personal', this, 'white')">Personal</button>
 
+<div style = "position:relative;left:110px;top:18px;"><h2>Swarn Priya</h2></div>
+
+<div style="position:relative;left:80px;top:28px;"><img src="mypic.jpg" width="200" alt="My Image" /></div>
 
 <div id="Home" class="tabcontent" style="display:block">
   <h3>About me</h3>
-  <p>Details about me</p>
+  <p>I am a doctoral researcher at 
+     <a style="text-decoration:none" href="https://www.inria.fr/fr">Inria</a>, Sophia Antipolis, France in the 
+     <a style="text-decoration:none" href="https://team.inria.fr/stamp/">STAMP</a> team working with 
+     <a style="text-decoration:none" href="https://www-sop.inria.fr/members/Yves.Bertot/research.html">Yves Bertot</a> and 
+     <a style="text-decoration:none" href="https://scholar.google.fr/citations?user=HvHznoAAAAAJ&hl=en"> Benjamin Grégoire</a>. 
+     I am also a third-year Ph.D. student in the department of Computer Science at 
+     <a style="text-decoration:none" href="https://univ-cotedazur.fr/">Université Côte d'Azur</a>, France.
+     I am working on application of formal methods in the domain of security. 
+     More generally, I am working on providing machine-checked 
+     formally verified mitigations against timing-based side-channel attacks.
+  </p>
+  <p>I obtained my master's degree in Computer Science from 
+     <a style="text-decoration:none" href="https://www.iastate.edu/">Iowa State University</a>, United States.
+     During my master's thesis, I designed a programming language for Message Passing Concurrency 
+     that has an intensional receive and also provided machine-checked soundness proof.
+  </p>
+  <p>I obtained my bachelor's degree in Electronics and Instrumentation from 
+     <a style="text-decoration:none" href="https://makautwb.ac.in/">West Bengal University</a>, India.
+ </p>
   <h3>Research</h3>
-  <p>Add research interests</p>
-  <h3>Contact</h3>
+  <p>My research interests include formal methods, programming languages and type systems, 
+     software security, and applications of formal methods in various domains like security, blockchain, etc. 
+     I firmly believe in providing machine-checked guarantees 
+     (using the theorem prover <a style="text-decoration:none" href="https://coq.inria.fr/">Coq</a>) 
+     for absence of bugs and the preservation of exciting properties in various domains. 
+     I am a pleased user of Coq proof assistant. </p>
+  <h4>Ph.D. research</h4>
+     <p>I am currently working with Jasmin framework. Jasmin framework consists of the Jasmin language, a 
+        formally verified compiler and support of tools to prove various properties like safety, constant-time, etc. at the source level.  
+        The Jasmin language is used to write high-assurance and efficient cryptography. It gives the programmer a control over the low-level
+        details like freedom of choosing the storage class (register or stack) of program variables and also includes high-level constructs. 
+        The Jasmin compiler is formally verified for its correctness using Coq. 
+     </p>
+     <p>
+        My work involves making Jasmin compiler more reliable and 
+        trustworthy. I formally proved (using the theorem prover Coq) that the Jasmin compiler preserves cryptographic constant-time property.
+        The development is present <a style="text-decoration:none" href="https://github.com/jasmin-lang/jasmin/tree/constant-time">here</a>.
+     </p>
+
+     <p>
+        I also extended the previous work to prove (using the theorem prover Coq) preservation of constant-time property targeting the fine-grained leakage models. 
+        The fine-grained leakage model extends the baseline leakage model (leaking only branching condition and accessed memory addresses) 
+        to include stronger (taking into account time-variable operations) and weaker leakage models (leaking the cache line of the address being accessed).
+        The development is present <a style="text-decoration:none" href="https://github.com/jasmin-lang/jasmin/tree/constant-time-op">here</a>.
+    </p>
+   
+           
+  <h3>Contact</h3>  
   <p>Contact details</p>
 </div>
 
