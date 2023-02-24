@@ -8,6 +8,8 @@ body, html {
   height: 100%;
   margin: 0;
   font-family: Arial;
+  margin-bottom: 5em;
+  padding-bottom: 1050px;
 }
 
 /* Style tab links */
@@ -38,9 +40,24 @@ border-radius: .7rem;;
   left: 380px;
   padding: 15px;
   position: absolute;
-  top: 140px;
+  top: 100px;
   width: 60%;
 }
+
+a:link {
+         color: greenyellow;
+         background-color: transparent;
+         text-decoration: none;
+      }
+      a:visited {
+         color: rgb(0, 76, 255);
+         background-color: transparent;
+         text-decoration: none;
+      }
+      a:active {
+         color: yellow;
+         background-color: transparent;
+      }
 
 #Home {background-color: white;}
 #Publications {background-color: white;}
@@ -53,43 +70,45 @@ border-radius: .7rem;;
 <button class="tablink" onclick="openPage('Publications', this, 'white')">Publications</button>
 <button class="tablink" onclick="openPage('Personal', this, 'white')">Personal</button>
 
-<div style = "position:relative;left:110px;top:18px;"><h2>Swarn Priya</h2></div>
-
-<div style="position:relative;left:80px;top:28px;"><img src="mypic.jpg" width="200" alt="My Image" /></div>
-
 <div id="Home" class="tabcontent" style="display:block">
-  <h3>About me</h3>
+<div> 
+<pname style = "position:relative;left:-300px;top:-2px"><h2>Swarn Priya</h2></pname>
+<p style="position:relative;left:-300px;top:2px"><img src="mypic.jpg" width="200" alt="My Image" /></p>
+</div>
+
+<div style = "position:relative;top:-300px"> 
+<h3>About me</h3></p>
   <p>I am a doctoral researcher at 
-     <a style="text-decoration:none" href="https://www.inria.fr/fr">Inria</a>, Sophia Antipolis, France in the 
+     <a style="text-decoration:none" href="https://www.inria.fr/fr">Inria</a>, Sophia Antipolis, France, in the 
      <a style="text-decoration:none" href="https://team.inria.fr/stamp/">STAMP</a> team working with 
      <a style="text-decoration:none" href="https://www-sop.inria.fr/members/Yves.Bertot/research.html">Yves Bertot</a> and 
      <a style="text-decoration:none" href="https://scholar.google.fr/citations?user=HvHznoAAAAAJ&hl=en"> Benjamin Grégoire</a>. 
      I am also a third-year Ph.D. student in the department of Computer Science at 
      <a style="text-decoration:none" href="https://univ-cotedazur.fr/">Université Côte d'Azur</a>, France.
-     I am working on application of formal methods in the domain of security. 
-     More generally, I am working on providing machine-checked 
+     I am working on applying formal methods in the security domain. 
+     More generally, I am working on providing machine-checked, 
      formally verified mitigations against timing-based side-channel attacks.
   </p>
   <p>I obtained my master's degree in Computer Science from 
      <a style="text-decoration:none" href="https://www.iastate.edu/">Iowa State University</a>, United States.
      During my master's thesis, I designed a programming language for Message Passing Concurrency 
-     that has an intensional receive and also provided machine-checked soundness proof.
+     with an intensional receive and also provided machine-checked soundness proof.
   </p>
   <p>I obtained my bachelor's degree in Electronics and Instrumentation from 
      <a style="text-decoration:none" href="https://makautwb.ac.in/">West Bengal University</a>, India.
  </p>
   <h3>Research</h3>
-  <p>My research interests include formal methods, programming languages and type systems, 
-     software security, and applications of formal methods in various domains like security, blockchain, etc. 
-     I firmly believe in providing machine-checked guarantees 
-     (using the theorem prover <a style="text-decoration:none" href="https://coq.inria.fr/">Coq</a>) 
-     for absence of bugs and the preservation of exciting properties in various domains. 
-     I am a pleased user of Coq proof assistant. </p>
-  <h4>Ph.D. research</h4>
-     <p>I am currently working with Jasmin framework. Jasmin framework consists of the Jasmin language, a 
-        formally verified compiler and support of tools to prove various properties like safety, constant-time, etc. at the source level.  
-        The Jasmin language is used to write high-assurance and efficient cryptography. It gives the programmer a control over the low-level
-        details like freedom of choosing the storage class (register or stack) of program variables and also includes high-level constructs. 
+     <p>My research interests include formal methods, programming languages and type systems, 
+        software security, and applications of formal methods in various domains like security, blockchain, etc. 
+        I firmly believe in providing machine-checked guarantees 
+        (using the theorem prover <a style="text-decoration:none" href="https://coq.inria.fr/">Coq</a>) 
+        for absence of bugs and the preservation of critical properties in various domains. 
+        I am a pleased user of Coq proof assistant. </p>
+  <h4>Research during Ph.D.</h4>
+     <p>I am currently working with the Jasmin framework. Jasmin framework consists of the Jasmin language, a 
+        formally verified compiler, and support of tools to prove various properties like safety, constant-time, etc., at the source level.  
+        The Jasmin language is used to write high-assurance and efficient cryptography. It gives the programmer control over low-level
+        details like the freedom of choosing the storage class (register or stack) of program variables and includes high-level constructs. 
         The Jasmin compiler is formally verified for its correctness using Coq. 
      </p>
      <p>
@@ -99,18 +118,37 @@ border-radius: .7rem;;
      </p>
 
      <p>
-        I also extended the previous work to prove (using the theorem prover Coq) preservation of constant-time property targeting the fine-grained leakage models. 
+        I also extended the previous work to prove (using the theorem prover Coq) the preservation of constant-time property targeting the fine-grained leakage models. 
         The fine-grained leakage model extends the baseline leakage model (leaking only branching condition and accessed memory addresses) 
         to include stronger (taking into account time-variable operations) and weaker leakage models (leaking the cache line of the address being accessed).
         The development is present <a style="text-decoration:none" href="https://github.com/jasmin-lang/jasmin/tree/constant-time-op">here</a>.
-    </p>
-   
-           
-  <h3>Contact</h3>  
-  <p>Contact details</p>
+     </p>
+
+     <p>
+        I also worked on providing mitigations against "Spectre" attacks (mainly Spectre v1) for a simple language using an information-flow 
+        based type-system. The soundness of the type system is proved using Coq. The development is present  
+        <a style="text-decoration:none" href="https://github.com/swarnpriya/simple_lang_sslh">here</a>.
+        This idea is also extended for Jasmin framework. The soundness proof is done on paper. 
+        The development is present  
+        <a style="text-decoration:none" href="https://github.com/jasmin-lang/jasmin/tree/glob_array3_slh">here</a>.
+     </p>
+    
+    <h4>Research during Masters</h4>
+      <p>
+        I worked on desigining a message passing-based language that incorporates an intensional design of the receive expression. 
+        This intensional receive helps in reasoning about the type of the message received by any process and its effect. 
+        Intensional design of receive expression integrates static and dynamic type checking and allows the effect of the message 
+        received to be intensionally inspected through a notion of dynamic typing. This enables reasoning about the effect of the 
+        message received from the head of the mailbox while retaining static type safety. The idea is formally verified for soundness 
+        using Coq. The development is present 
+        <a style="text-decoration:none" href="https://github.com/swarnpriya/intensional-receive">here</a>.
+      </p>
+
+
+  </div>
 </div>
 
-<div id="Publications" class="tabcontent">
+  <div id="Publications" class="tabcontent" style = "position:relative;left:100px" >
   <h2>Publications</h2>
   <h3>2023</h3>
   <ul>
@@ -130,7 +168,7 @@ border-radius: .7rem;;
          Benjamin Grégoire, Vincent Laporte, and Swarn Priya<br>
          ACM SIGSAC Conference on Computer and Communications Security (CCS, 2022) 
          <a href="https://dl.acm.org/doi/10.1145/3548606.3560689">[doi]</a>
-
+         <br>(Acceptance rate: 22.3%)
  </li>
   </ul> 
   <h3>2021</h3>
@@ -139,7 +177,8 @@ border-radius: .7rem;;
       Structured Leakage and Applications to Cryptographic Constant-Time and Cost</a>
      <br>Gilles Barthe, Benjamin Grégoire, Vincent Laporte, and Swarn Priya<br>
          ACM SIGSAC Conference on Computer and Communications Security (CCS, 2021) 
-         <a href="https://dl.acm.org/doi/abs/10.1145/3460120.3484761">[doi]</a>
+         <a href="https://dl.acm.org/doi/abs/10.1145/3460120.3484761">[doi]</a> 
+         <br>(Acceptance rate: 22.3%)
         </li>
     <li><a href="https://hal.inria.fr/hal-03352062">
       High-Assurance Cryptography in the Spectre Era</a>
@@ -147,6 +186,7 @@ border-radius: .7rem;;
           Tiago Oliveira, Swarn Priya, Tamara Rezk and Peter Schwabe<br>
       IEEE Symposium on Security and Privacy (S&P, 2021)
       <a href="https://ieeexplore.ieee.org/abstract/document/9519434">[doi]</a>
+      <br>(Acceptance rate: 12.1%)
     </li>
   </ul> 
   <h3>2019</h3>
@@ -156,6 +196,7 @@ border-radius: .7rem;;
       <br>Gowtham Kaki, Swarn Priya, KC Sivaramakrishnan, Suresh Jagannathan<br>
       Proceedings of the ACM on Programming Languages (OOPSLA, 2019)
       <a href="https://dl.acm.org/doi/abs/10.1145/3360580">[doi]</a>
+      <br>(Acceptance rate: 29%)
     </li>
   </ul> 
   <h3>2017</h3>
@@ -187,6 +228,7 @@ function openPage(pageName,elmnt,color) {
 // Get the element with id="defaultOpen" and click on it
 document.getElementById("defaultOpen").click();
 </script>
-   
+
+
 </body>
 </html> 
