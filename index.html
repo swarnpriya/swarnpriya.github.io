@@ -59,6 +59,30 @@ a:link {
          background-color: transparent;
       }
 
+      * {
+  box-sizing: border-box;
+}
+
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 5px;
+}
+
+/* Clearfix (clear floats) */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.img {
+    float: left;
+    width:  100px;
+    height: 80px;
+    background-size: cover;
+}
+
 #Home {background-color: white;}
 #Publications {background-color: white;}
 #Personal {background-color: white;}
@@ -208,6 +232,28 @@ a:link {
     </li>
   </ul> 
 
+</div>
+
+<div id="Personal" class="tabcontent" style = "position:relative;left:100px" >
+<ul>
+<li>
+  <h2>I am a Cynophilist.</h2>
+  <p>I have two beautiful babies (Perk and Chloe).</p>
+  <div class="row">
+    <div class="column">
+      <img src="perk1.jpg" alt="Snow" style="width:70%">
+    </div>
+    <div class="column">
+      <img src="chloe3.jpg" alt="Forest" style="width:70%">
+    </div>
+    <div>
+      <p> Perk is an American Eskimos, 6 years old. He came into my life when he was 6 weeks old. I got him in Iowa, United States. </p>
+      <p> Chloe is 9 years old. I adopted her after moving to France in October, 2020. Her breed is "Rescued Love"
+      <p> They love to play, eat and sleep. </p>
+    </div>
+  </div>
+</li>
+</ul>
 </div>
 
 <script>
