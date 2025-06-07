@@ -156,7 +156,7 @@ address {
   </p>
   <p>I obtained my bachelor's degree in Electronics and Instrumentation from 
      <a style="text-decoration:none" href="https://makautwb.ac.in/">West Bengal University</a>, India.
-  </p> <b>I am on the job market for the next academic year (2026-27) for an assistant professor postition.</b> 
+  </p> <b>I am on the job market for the next academic year (2026-27).</b> 
  </p>
   <h3>Research</h3>
      <p>My research interests include formal methods, programming languages and type systems, 
@@ -167,8 +167,17 @@ address {
         I am a pleased user of Coq proof assistant. </p>
  <h4>Research during Post-Doc.</h4>
      <p>I am working on designing an end-to-end formally verified framework to write safe and correct eBPF programs. It involves
-        desiging a verification-friendly language, a strong type system (reasons about most of the eBPF properties at static time), and a
+        desiging a verification-friendly language, a strong type system (reasons about most of the eBPF properties at compile time), and a
         formally verified compiler (incorporates CompCert on its way to produce BPF bytecode). All the develiopment is done using Coq.
+        The development is present <a style="text-decoration:none" href="https://github.com/ssrg-vt/BeePL_compcert">here</a>
+     </p>
+     <p>
+      I am also working on developing a formally verified semantic equivalence checker between x86 and CHERI architectures. 
+      This work is motivated by the goal of safely porting legacy x86 binaries to CHERI-enabled platforms (ARM/RISC-V), 
+      leveraging CHERI’s fine-grained memory protection and capability-based security model. My focus is on ensuring semantic correctness 
+      between the original x86 binaries and their CHERI counterparts—an essential step in verifying the correctness of the 
+      underlying transpilation process. The static analysis framework will be grounded in abstract interpretation, 
+      and the entire equivalence-checking pipeline will be formally verified to ensure soundness and reliability.
      </p>
   <h4>Research during Ph.D.</h4>
      <p>I worked with the Jasmin framework. Jasmin framework consists of the Jasmin language, a 
