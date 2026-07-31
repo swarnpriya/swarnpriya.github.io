@@ -1,0 +1,39 @@
+---
+import type { Publication } from '../data/publications';
+
+const { publication } = Astro.props as {
+  publication: Publication;
+};
+---
+
+<article class="publication-card" data-category={publication.category}>
+  <div class="pub-year">{publication.year}</div>
+
+  <div>
+    <p class="eyebrow">{publication.category}</p>
+
+    <h3>{publication.title}</h3>
+
+    <p class="authors">{publication.authors}</p>
+
+    {publication.merit && (
+      <p class="merit">{publication.merit}</p>
+    )}
+
+    <p class="venue">{publication.venue}</p>
+
+    <div class="pub-links">
+      {publication.award && (
+        <span class="award">★ {publication.award}</span>
+      )}
+
+      {publication.href && (
+        <a href={publication.href}>Paper</a>
+      )}
+
+      {publication.doi && (
+        <a href={publication.doi}>DOI</a>
+      )}
+    </div>
+  </div>
+</article>

@@ -1,0 +1,192 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="Research">
+
+  <section class="research-intro shell">
+    <p class="kicker">Research</p>
+    <p>
+      <strong>Research Vision.</strong> PAWSSEC (Provable Assurance for Whole-System
+      Security) is a long-term research vision for achieving end-to-end,
+      machine-checked security guarantees across the computing stack, from
+      programming languages and compilers to systems and hardware.</p>
+
+      <p> My research lies at the intersection of programming languages, formal
+      verification, compiler technology, and systems security. I develop
+      mathematical foundations and practical tools for building software whose
+      correctness and security properties can be established rigorously and
+      preserved across different layers of the software stack. My work spans
+      language design, verified compilation, systems software, and emerging
+      applications of formal methods to AI systems.</p>
+    </p>
+  </section>
+
+  <section class="research-area shell">
+    <h2>Programming Languages</h2>
+
+    <p>
+      Programming languages provide the foundation for building reliable and secure software. 
+      My research develops verification-friendly
+      programming languages, formal semantics, 
+      and type systems that make correctness and security properties explicit and 
+      amenable to machine-checked verification.
+    </p>
+
+    <h3>Representative Projects</h3>
+
+    <ul class="project-list">
+  <li>
+    <strong>BeePL.</strong> A verification-friendly language and verified
+    compilation framework for Linux eBPF.
+
+    <div class="project-publications">
+      <strong>Publications:</strong>
+      <a href="https://youtu.be/lczetpAgPo0?si=RnnT6_GS30vzYfDE">PriSC 2025</a>,
+      <a href="https://arxiv.org/pdf/2507.09883">arXiv</a>
+    </div>
+
+    <div class="project-links">
+      <a href="https://github.com/pawssec/beepl_compcert">GitHub</a>
+    </div>
+  </li>
+
+   <li>
+    <strong>Jasmin.</strong> A verification-oriented programming language for high-performance cryptographic software. 
+    My research extends its formal foundations through structured leakage models, fine-grained constant-time policies, 
+    and verified compilation that preserves security guarantees.
+
+    <div class="project-publications">
+      <strong>Publications:</strong>
+      <a href="https://eprint.iacr.org/2022/1270.pdf">S&P 2023</a>,
+      <a href="https://inria.hal.science/hal-03352062">S&P 2021</a>
+    </div>
+
+    <div class="project-links">
+      <a href="https://github.com/jasmin-lang/jasmin">GitHub</a>
+    </div>
+  </li>
+
+  <li>
+    <strong>λir.</strong> A language with intensional receive.
+    <div class="project-publications">
+      <strong>Publications:</strong>
+      <a href="https://www.proquest.com/openview/950db6495c95bfabb23e11b90fc49a04/1?pq-origsite=gscholar&cbl=18750">Master's thesis</a>
+    </div>
+
+    <div class="project-links">
+      <a href="https://github.com/swarnpriya/intensional-receive">GitHub</a>
+    </div>
+  </li>
+</ul>
+  </section>
+
+  <section class="research-area shell">
+    <h2>Verified Compilation and Toolchains</h2>
+
+    <p>
+      Modern software relies on complex compilation toolchains where correctness and security guarantees established at 
+      the source level can be compromised by compiler transformations or supporting infrastructure. 
+      My research develops verified compilation techniques and formally verified toolchains that preserve 
+      these guarantees throughout the software build process, from compilation to linking, loading, and code generation.
+    </p>
+
+    <h3>Representative Projects</h3>
+
+  <ul class="project-list">
+    <li>
+      <strong>BeePL.</strong>
+      A verification-friendly language for Linux eBPF with a formally verified
+      compilation path through CompCert.
+      <div class="project-links">
+        <span>Ongoing work</span>
+      </div>
+    </li>
+
+    <li>
+      <strong>Structured Leakage.</strong>
+      A formal framework for describing program leakage in a structured way and
+      relating leakage across source and target languages. It provides the semantic
+      foundation for reasoning about cryptographic constant-time security and its
+      preservation through compilation.
+
+      <div class="project-publications">
+      <strong>Publications:</strong>
+      <a href="https://inria.hal.science/hal-03430789">CCS 2021</a>
+      </div>
+
+      <div class="project-links">
+      <a href="https://github.com/jasmin-lang/jasmin/tree/constant-time">GitHub</a>
+      </div>
+    </li>
+
+    <li>
+      <strong>Fine-Grained Constant-Time Security.</strong>
+      Extending structured leakage with fine-grained leakage models that account
+      for cache-line observations and variable-time instructions. The work provides
+      source-level verification and a formally verified compilation infrastructure
+      that preserves constant-time security for the selected leakage model.
+
+      <div class="project-publications">
+      <strong>Publications:</strong>
+      <a href="https://eprint.iacr.org/2022/630.pdf">CCS 2022</a>
+      </div>
+
+      <div class="project-links">
+      <a href="https://github.com/jasmin-lang/jasmin/tree/constant-time-op">GitHub</a>
+      </div>
+      </div>
+    </li>
+
+    <li>
+      <strong>Verified Linking and Loading.</strong>
+      Developing machine-checked linkers and loaders that preserve the
+      semantics and security properties established during compilation,
+      extending formal assurance from compiled components to executable
+      programs.
+
+      <div class="project-links">
+        <span>Ongoing work</span>
+      </div>
+    </li>
+  </ul>
+  </section>
+
+    <section class="research-area shell">
+    <h2>Formal Methods for AI Systems</h2>
+
+    <p>
+      Large language models and autonomous agents introduce new challenges for
+      correctness, security, and reliability. I am exploring how ideas from
+      programming languages, compiler technology, and formal verification can
+      provide principled foundations for AI systems through structured prompt
+      representations, policy enforcement, and verification techniques for
+      agentic workflows.
+    </p>
+
+    <h3>Representative Projects</h3>
+
+  <ul class="project-list">
+    <li>
+      <strong>Verified Prompt Compilation</strong>
+      Compiler-inspired frameworks for systematically improving the correctness, safety, and reliability of 
+      natural language prompts through formal intermediate representations and verified transformations.
+      <div class="project-links">
+        <span>Ongoing work</span>
+      </div>
+    </li>
+
+    
+
+    <li>
+      <strong>AgentFlow</strong>
+      A formal authorization framework for AI agents based on information flow, security labels, and path-sensitive policies, 
+      enabling formal reasoning about secure agent interactions and policy enforcement.
+      <div class="project-links">
+        <span>Ongoing work</span>
+      </div>
+    </li>
+    </ul>
+</section>
+
+</BaseLayout>

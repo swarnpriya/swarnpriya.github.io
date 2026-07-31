@@ -1,0 +1,49 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { service } from '../data/service';
+
+const programCommittees = service.filter(
+  (item) => item[1] === 'Program Committee'
+);
+
+const panels = service.filter(
+  (item) => item[1] !== 'Program Committee'
+);
+---
+
+<BaseLayout title="Service">
+  <section class="service-page shell">
+    <p class="kicker">Service</p>
+    <div class="research-area shell">
+      <h2>Program Committees</h2>
+
+      <ul class="service-items">
+        {
+          programCommittees.map((item) => (
+            <li>
+              <span>{item[0]}</span>
+              <time>{item[2]}</time>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+
+    <div class="research-area shell">
+      <h2>Panels and Invited Service</h2>
+
+      <ul class="service-items">
+        {
+          panels.map((item) => (
+            <li>
+              <span>
+                {item[0]} — {item[1]}
+              </span>
+              <time>{item[2]}</time>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </section>
+</BaseLayout>

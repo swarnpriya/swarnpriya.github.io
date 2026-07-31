@@ -1,0 +1,9 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ProjectCard from '../../components/ProjectCard.astro';
+import { projects } from '../../data/projects';
+---
+<BaseLayout title="Projects">
+  <section class="page-hero shell"><p class="kicker">Projects</p><h1>A growing research program in trustworthy software systems.</h1><p>Completed work, active projects, and new directions are shown together to make the larger research trajectory visible.</p></section>
+  <section class="section shell"><div class="project-grid">{projects.map(project => <ProjectCard project={project} />)}</div></section>
+</BaseLayout>

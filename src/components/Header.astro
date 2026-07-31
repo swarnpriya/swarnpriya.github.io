@@ -1,0 +1,58 @@
+---
+import { site } from '../data/site';
+
+const path = Astro.url.pathname;
+
+const links = [
+  ['About', '/'],
+  ['Research', '/research/'],
+  ['Publications', '/publications/'],
+  ['Teaching', '/teaching/'],
+  ['Service', '/service/'],
+  ['News', '/news/'],
+];
+---
+
+<header class="site-header">
+  <div class="brand">
+    <a class="site-name" href="/">
+      {site.name}
+    </a>
+
+    <div class="site-role">
+      {site.title}<br />
+      <a
+        class="institution"
+        href="https://school.eecs.wsu.edu/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        {site.institution}
+      </a>
+    </div>
+  </div>
+
+  <button
+    class="menu-button"
+    aria-label="Open navigation"
+    onclick="document.querySelector('.nav-links')?.classList.toggle('open')"
+  >
+    Menu
+  </button>
+
+  <nav class="nav-links" aria-label="Main navigation">
+    {links.map(([label, href]) => (
+      <a
+        href={href}
+        class={
+          (href === '/' ? path === '/' : path.startsWith(href))
+            ? 'active'
+            : ''
+        }
+      >
+        {label}
+      </a>
+    ))}
+
+  </nav>
+</header>

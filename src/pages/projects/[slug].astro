@@ -1,0 +1,19 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { projects } from '../../data/projects';
+export function getStaticPaths() { return projects.map(project => ({ params: { slug: project.slug }, props: { project } })); }
+const { project } = Astro.props;
+---
+<BaseLayout title={project.title} description={project.summary}>
+  <section class="project-hero shell"><a class="back-link" href="/projects/">← All projects</a><p class="kicker">{project.eyebrow}</p><h1>{project.title}</h1><p>{project.summary}</p><div class="tags large">{project.tags.map((tag: string) => <span>{tag}</span>)}</div></section>
+  <section class="section shell project-detail-grid">
+    <aside><div class="sticky-card"><p class="eyebrow">Status</p><h3>{project.status}</h3>{project.links?.map((link: any) => <a class="text-link block" href={link.href}>{link.label} <span>↗</span></a>)}</div></aside>
+    <div class="project-content">
+      <section><p class="section-number">01</p><h2>The challenge</h2><p>{project.challenge}</p></section>
+      <section><p class="section-number">02</p><h2>The approach</h2><p>{project.approach}</p></section>
+      <section><p class="section-number">03</p><h2>Research pipeline</h2><div class="pipeline">{project.pipeline.map((step: string, i: number) => <><div class="pipeline-step"><span>{String(i+1).padStart(2,'0')}</span><strong>{step}</strong></div>{i < project.pipeline.length - 1 && <div class="pipeline-arrow">↓</div>}</>)}</div></section>
+      <section><p class="section-number">04</p><h2>Intended outcome</h2><p>{project.outcome}</p></section>
+      <section class="edit-note"><strong>Update this page:</strong> add collaborators, current status, architecture figures, papers, talks, code, and student opportunities as the project develops.</section>
+    </div>
+  </section>
+</BaseLayout>

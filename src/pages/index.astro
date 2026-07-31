@@ -1,0 +1,242 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PublicationCard from '../components/PublicationCard.astro';
+
+import { site } from '../data/site';
+import { projects } from '../data/projects';
+import { publications } from '../data/publications';
+import { service } from '../data/service';
+---
+
+<BaseLayout>
+  <!-- Intro / Hero -->
+  <section class="academic-hero shell">
+    <div class="hero-copy">
+      <p class="kicker">
+        Formal Methods · Static Analysis . Programming Languages · Systems Security
+      </p>
+
+      <p class="lead">
+        My research interests span formal methods, static analysis, programming languages, software security, 
+        and the application of formal methods across diverse areas of computer science. 
+        I develop machine-checked proofs using the  <a
+        href="https://rocq-prover.org/"
+        target="_blank"
+        rel="noopener noreferrer"
+        >
+        Rocq
+        </a>(formerly Coq) proof assistant to establish strong 
+        correctness and security guarantees, with the broader goal of building trustworthy computing systems. 
+        Much of my research is carried out using Rocq.
+      </p>
+
+      <div class="inline-links">
+        <a href="/research/">Research</a>
+        <a href="/publications/">Publications</a>        
+      </div>
+    </div>
+
+    <figure class="portrait">
+      <img src="/mypic.jpg" alt="Portrait of Swarn Priya" />
+    </figure>
+  </section>
+
+  <!-- About and Contact -->
+  <section class="section shell">
+    <div class="overview-layout">
+      <div class="main-column">
+        <p class="kicker">Overview</p>
+
+        <h2>About me</h2>
+
+        <p>
+          I am a Research Assistant Professor 
+          in the <a
+        href="https://school.eecs.wsu.edu/"
+        target="_blank"
+        rel="noopener noreferrer"
+        >School of Electrical Engineering and Computer Science</a> at <a
+        href="https://wsu.edu/"
+        target="_blank"
+        rel="noopener noreferrer"
+        >Washington State University</a>. 
+
+        <p>
+          Before joining WSU, I was a Postdoctoral Research Associate in the <a
+        href="https://www.ssrg.ece.vt.edu/"
+        target="_blank"
+        rel="noopener noreferrer"
+        >Systems Software Research Group</a> 
+          within the Bradley Department of Electrical and Computer Engineering at Virginia Tech.
+          During this time, I led the development of BeePL, a formally verified programming language and compiler for eBPF 
+          that aims to provide machine-checked guarantees of safety, correctness, and security for systems software.
+          I received my Ph.D. from <a
+        href="https://www.inria.fr/en/inria-centre-universite-cote-azur"
+        target="_blank"
+        rel="noopener noreferrer"
+        >Inria, Sophia Antipolis</a> and <a
+        href="https://univ-cotedazur.fr/"
+        target="_blank"
+        rel="noopener noreferrer"
+        >Université Côte d'Azur, France</a>, 
+          where I worked with <a
+        href="https://www-sop.inria.fr/members/Yves.Bertot/research.html"
+        target="_blank"
+        rel="noopener noreferrer"
+        > Yves Bertot</a> and <a
+        href="https://www-sop.inria.fr/members/Benjamin.Gregoire/"
+        target="_blank"
+        rel="noopener noreferrer"
+        > Benjamin Grégoire</a> as a member of the <a
+        href="https://team.inria.fr/stamp/"
+        target="_blank"
+        rel="noopener noreferrer"
+        >STAMP</a> and <a
+        href="https://team.inria.fr/splits/"
+        target="_blank"
+        rel="noopener noreferrer"
+        >SPLiTS</a> research teams. 
+          My Ph.D. research focused on applying formal methods to computer security, 
+          with an emphasis on designing a formally verified secure compiler that provides 
+          machine-checked guarantees against timing-based side-channel attacks.
+        </p>
+
+        <a class="arrow-link" href="/research/">
+          Read more about my research →
+        </a>
+      </div>
+
+      <aside class="contact-card">
+        <h3>Contact</h3>
+
+        <p>
+          {site.department}<br />
+          Washington State University<br />
+          Pullman, Washington
+        </p>
+
+        <p>
+         <strong>Email</strong><br />{site.email}
+        </p>
+
+        <p class="small-links">
+          <a href={site.scholar}>Google Scholar</a>
+          ·
+          <a href={site.github}>GitHub</a>
+          ·
+          <a href={site.linkedin}>LinkedIn</a>
+        </p>
+
+        <p class="muted">
+          Open to research collaborations and conversations with students
+          interested in formal methods and secure systems.
+        </p>
+      </aside>
+    </div>
+  </section>
+
+  <!-- Research -->
+    <!--
+<section class="section shell">
+  <div class="section-top">
+    <div>
+      <p class="kicker">Research</p>
+      <h2>Current Research Directions</h2>
+    </div>
+  </div>
+  
+  <p class="section-intro">
+    <strong>Research Vision.</strong> PAWSSEC (Provable Assurance for Whole-System
+    Security) is a long-term research vision for achieving end-to-end,
+    machine-checked security guarantees across the computing stack, from
+    programming languages and compilers to systems and hardware.
+  </p>
+
+  <div class="thrust-grid">
+    {projects.slice(0, 4).map((project, index) => (
+      <article class="thrust">
+        <span>
+          Research Direction {String(index + 1).padStart(2, "0")}
+        </span>
+
+        <h3>{project.title}</h3>
+
+        <p>{project.summary}</p>
+      </article>
+    ))}
+  </div>
+</section>
+-->
+
+  <!-- Publications and News -->
+  <section class="section shell two-column-section">
+    <div>
+      <div class="section-top">
+        <div>
+          <p class="kicker">Selected work</p>
+          <h2>Publications</h2>
+        </div>
+
+        <a class="arrow-link" href="/publications/">
+          All publications →
+        </a>
+      </div>
+
+      <div class="publication-list compact">
+        {
+          publications
+            .slice(0, 4)
+            .map((publication) => (
+              <PublicationCard publication={publication} />
+            ))
+        }
+      </div>
+    </div>
+
+   <aside class="news-preview">
+  <p class="kicker">Recent news</p>
+  <h2>Updates</h2>
+    <div class="simple-list">
+  <a href="/news/">
+    <time>2025</time>
+    <span>
+      Invited to present my research at the France Science Summit 2025, held in Washington, DC.
+    </span>
+  </a>
+
+  <a href="/news/">
+  <time>2025</time>
+  <span>
+    Attended NSF FMitF PI Meeting in Iowa and presented my research directions.
+  </span>
+</a>
+
+  <a href="/news/">
+  <time>2025, 2024</time>
+  <span>
+    Presented <em>BeePL: Correct-by-Compilation Kernel Extensions</em> at the DARPA PI Meeting.
+  </span>
+</a>
+
+  <a href="/news/">
+    <time>2023</time>
+    <span>
+      Invited to serve on the Formal Methods for Security panel at Google, Paris.
+    </span>
+  </a>
+
+  <a href="/news/">
+    <time>2023</time>
+    <span>
+      Received the UNESCO–L'Oréal Young Talent Women in Science Award.
+    </span>
+  </a>
+
+  <a href="/news/">
+    <time>2023</time>
+    <span>
+      Received the IEEE S&amp;P Distinguished Paper Award.
+    </span>
+  </a>
+</aside>
+</BaseLayout>
