@@ -668,7 +668,7 @@ p {
     grid-template-columns: 1fr;
     gap: 0.35rem;
   }
-  portrait {
+  .portrait {
     display: block;
     width: 100%;
     max-width: 320px;
@@ -726,7 +726,7 @@ p {
     min-height: 76px;
   }
 
-  portrait {
+  .portrait {
     display: block;
     width: 100%;
     max-width: 320px;
@@ -1014,7 +1014,7 @@ p {
     gap: 0.2rem;
     align-items: flex-start;
   }
-portrait {
+.portrait {
     display: block;
     width: 100%;
     max-width: 320px;
