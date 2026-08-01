@@ -668,6 +668,20 @@ p {
     grid-template-columns: 1fr;
     gap: 0.35rem;
   }
+  portrait {
+    display: block;
+    width: 100%;
+    max-width: 320px;
+    margin: 0 auto;
+  }
+
+  .portrait img {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: auto;
+    object-fit: contain;
+  }
 }
 
 /* Footer */
@@ -710,6 +724,21 @@ p {
   .site-header {
     position: relative;
     min-height: 76px;
+  }
+
+  portrait {
+    display: block;
+    width: 100%;
+    max-width: 320px;
+    margin: 0 auto;
+  }
+
+  .portrait img {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: auto;
+    object-fit: contain;
   }
 
   .nav-links {
@@ -984,5 +1013,19 @@ p {
     flex-direction: column;
     gap: 0.2rem;
     align-items: flex-start;
+  }
+portrait {
+    display: block;
+    width: 100%;
+    max-width: 320px;
+    margin: 0 auto;
+  }
+
+  .portrait img {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: auto;
+    object-fit: contain;
   }
 }
