@@ -1029,3 +1029,33 @@ portrait {
     object-fit: contain;
   }
 }
+
+/* Force profile picture to appear on tablets and phones */
+@media (max-width: 860px) {
+  .academic-hero {
+    display: flex !important;
+    flex-direction: column !important;
+  }
+
+  .portrait {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    width: 100% !important;
+    max-width: 300px !important;
+    height: auto !important;
+    margin: 20px auto 0 !important;
+    order: 2;
+  }
+
+  .portrait img {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    width: 100% !important;
+    max-width: 300px !important;
+    height: auto !important;
+    aspect-ratio: auto !important;
+    object-fit: contain !important;
+  }
+}
