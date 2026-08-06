@@ -1,6 +1,6 @@
 export const site = {
   name: 'Swarn Priya',
-  title: 'Incoming Research Assistant Professor',
+  title: 'Research Assistant Professor',
   institution: 'Washington State University',
   department: 'School of Electrical Engineering and Computer Science',
   description:
