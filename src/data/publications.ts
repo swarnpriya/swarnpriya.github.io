@@ -11,6 +11,13 @@ export type Publication = {
 
 export const publications: Publication[] = [
   {
+    year: 2026,
+    title: 'Agenra: A Language and Verified Core for Stateful LLM Agent Authorization',
+    authors: 'Basavesh Ammanaghatta Shivakumar, Swarn Priya, and Peng Gao',
+    venue: 'arXiv',
+    href: 'https://arxiv.org/abs/2608.22868'
+  },
+  {
     year: 2025,
     title: 'BeePL: Correct-by-compilation kernel extensions',
     authors: 'Swarn Priya, Frédéric Besson, Connor Sughrue, Tim Steenvoorden, Jamie Fulford, Freek Verbeek, and Binoy Ravindran',

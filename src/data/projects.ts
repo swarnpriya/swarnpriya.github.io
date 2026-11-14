@@ -50,10 +50,10 @@ export const projects: Project[] = [
   },
   {
     slug: 'agentflow',
-    title: 'AgentFlow',
+    title: 'Agenra',
     eyebrow: 'Authorization for LLM agents',
-    summary: 'A policy framework for controlling information flow, delegation, and path-sensitive actions in tool-using AI agents.',
-    status: 'Research direction',
-    tags: ['AI agents', 'Authorization', 'Information flow', 'SMT'],
+    summary: 'A policy language and Lean-verified enforcement core for stateful LLM agent authorization, with simulation proofs that certify workflow preservation across policy revisions under stated assumptions.',
+    status: 'arXiv',
+    tags: ['AI agents', 'Authorization', 'Lean', 'Policy verification'],
   }
 ];

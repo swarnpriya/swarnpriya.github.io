@@ -17,7 +17,7 @@ export const service = [
   [
     'Principles of Secure Compilation',
     'Program Committee',
-    '2025',
+    '2025, 2027',
   ],
   [
     'Language-theoretic Security',

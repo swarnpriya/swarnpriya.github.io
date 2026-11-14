@@ -18,7 +18,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       mathematical foundations and practical tools for building software whose
       correctness and security properties can be established rigorously and
       preserved across different layers of the software stack. My work spans
-      language design, verified compilation, systems software, and emerging
+      language design, verified compilation, decompilation, systems software, and emerging
       applications of formal methods to AI systems.
     </p>
   </section>
@@ -33,6 +33,16 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       and type systems that make correctness and security properties explicit and 
       amenable to machine-checked verification.
     </p>
+
+    <div class="tags" aria-label="Programming languages keywords">
+      <span><strong>Keywords:</strong></span>
+      <span>Language design</span>
+      <span>Formal semantics</span>
+      <span>Type systems</span>
+      <span>Static analysis</span>
+      <span>Domain-specific languages</span>
+      <span>Rocq</span>
+    </div>
 
     <h3>Representative Projects</h3>
 
@@ -57,14 +67,9 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     My research extends its formal foundations through structured leakage models, fine-grained constant-time policies, 
     and verified compilation that preserves security guarantees.
 
-    <div class="project-publications">
-      <strong>Publications:</strong>
-      <a href="https://eprint.iacr.org/2022/1270.pdf">S&P 2023</a>,
-      <a href="https://inria.hal.science/hal-03352062">S&P 2021</a>
-    </div>
-
     <div class="project-links">
-      <a href="https://github.com/jasmin-lang/jasmin">GitHub</a>
+      <a href="https://github.com/jasmin-lang/jasmin">GitHub</a> ·
+      <a href="#formal-methods-security">Related security research and publications</a>
     </div>
   </li>
 
@@ -83,7 +88,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   </section>
 
   <section class="research-area shell">
-    <h2>Verified Compilation and Toolchains</h2>
+    <h2>Verified Compilation/Decompilation and Toolchains</h2>
 
     <p>
       Modern software relies on complex compilation toolchains where correctness and security guarantees established at 
@@ -92,6 +97,17 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       these guarantees throughout the software build process, from compilation to linking, loading, and code generation.
     </p>
 
+    <div class="tags" aria-label="Compilation and toolchains keywords">
+      <span><strong>Keywords:</strong></span>
+      <span>Verified compilation</span>
+      <span>Decompilation</span>
+      <span>Translation validation</span>
+      <span>Semantic preservation</span>
+      <span>CompCert</span>
+      <span>Linking and loading</span>
+      <span>Rocq</span>
+    </div>
+
     <h3>Representative Projects</h3>
 
   <ul class="project-list">
@@ -99,12 +115,77 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       <strong>BeePL.</strong>
       A verification-friendly language for Linux eBPF with a formally verified
       compilation path through CompCert.
+      <div class="project-publications">
+        <strong>Publications:</strong>
+        <a href="https://arxiv.org/search/?query=BeePL%3A+Correct-by-compilation+kernel+extensions&amp;searchtype=all">arXiv</a>
+      </div>
       <div class="project-links">
         <span>Ongoing work</span>
       </div>
     </li>
 
     <li>
+      <strong>DeCompCert.</strong>
+      A decompilation framework that reconstructs C from AArch64 assembly through
+      CompCert’s intermediate languages. It combines inference-guided reconstruction
+      with formally verified transformations and translation validation, establishing
+      machine-checked semantic guarantees between accepted C reconstructions and
+      their typed assembly inputs.
+      <div class="project-links">
+        <span>Under submission</span>
+      </div>
+    </li>
+
+    <li>
+      <strong>Verified Linking and Loading.</strong>
+      Developing machine-checked linkers and loaders that preserve the
+      semantics and security properties established during compilation,
+      extending formal assurance from compiled components to executable
+      programs.
+
+      <div class="project-links">
+        <span>Under submission</span>
+      </div>
+    </li>
+  </ul>
+
+    <p class="project-links">
+      Related work on security-preserving compilation:{' '}
+      <a href="#structured-leakage">Structured Leakage</a>,{' '}
+      <a href="#fine-grained-constant-time">Fine-Grained Constant-Time Security</a>,{' '}
+      <a href="#spectre-defenses">Spectre defenses</a>, and{' '}
+      <a href="#vellsslh">VellSSLH</a>.
+    </p>
+  </section>
+
+  <section class="research-area shell" id="formal-methods-security">
+    <h2>Formal Methods for Security</h2>
+
+    <p>
+      My research applies formal methods to establish rigorous security guarantees
+      for software systems. I develop formal models, type systems, and
+      machine-checked proofs that connect security policies with practical
+      verification and compiler-based defenses. In particular, my work addresses
+      timing side channels and speculative-execution attacks, with applications
+      to high-performance cryptographic software.
+    </p>
+
+    <div class="tags" aria-label="Security keywords">
+      <span><strong>Keywords:</strong></span>
+      <span>Software security</span>
+      <span>Information flow</span>
+      <span>Constant-time security</span>
+      <span>Speculative Constant-time Security</span>
+      <span>High-assurance cryptography</span>
+      <span>LLVM IR</span>
+      <span>Vellvm</span>
+      <span>Rocq</span>
+    </div>
+
+    <h3>Representative Projects</h3>
+
+    <ul class="project-list">
+    <li id="structured-leakage">
       <strong>Structured Leakage.</strong>
       A formal framework for describing program leakage in a structured way and
       relating leakage across source and target languages. It provides the semantic
@@ -121,7 +202,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       </div>
     </li>
 
-    <li>
+    <li id="fine-grained-constant-time">
       <strong>Fine-Grained Constant-Time Security.</strong>
       Extending structured leakage with fine-grained leakage models that account
       for cache-line observations and variable-time instructions. The work provides
@@ -138,17 +219,37 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       </div>
     </li>
 
-    <li>
-      <strong>Verified Linking and Loading.</strong>
-      Developing machine-checked linkers and loaders that preserve the
-      semantics and security properties established during compilation,
-      extending formal assurance from compiled components to executable
-      programs.
+    <li id="spectre-defenses">
+      <strong>Spectre Defenses for Cryptographic Software.</strong>
+      Formal methods for protecting high-performance cryptographic software
+      against speculative-execution attacks, including type-based defenses
+      against Spectre v1 in Jasmin.
+
+      <div class="project-publications">
+        <strong>Publications:</strong>{' '}
+        <a href="https://eprint.iacr.org/2022/1270.pdf">S&amp;P 2023</a>{' '}
+        <span class="award">(Distinguished Paper Award)</span>,{' '}
+        <a href="https://inria.hal.science/hal-03352062">S&amp;P 2021</a>
+      </div>
 
       <div class="project-links">
-        <span>Ongoing work</span>
+        <a href="https://github.com/jasmin-lang/jasmin">GitHub</a>
       </div>
     </li>
+
+    <li id="vellsslh">
+      <strong>VellSSLH: Selective Speculative Load Hardening.</strong>
+      A type-guided approach to selectively hardening C programs against Spectre v1
+      at LLVM IR. The work extends Vellvm with speculative execution and leakage
+      observations, and uses VellSCT, a security checker proved sound in Rocq, to
+      validate speculative constant-time security under stated runtime assumptions.
+      A separate proof establishes that a reference hardening transformation
+      preserves architectural behavior.
+      <div class="project-links">
+        <span>Under submission</span>
+      </div>
+    </li>
+
   </ul>
   </section>
 
@@ -163,6 +264,17 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       representations, policy enforcement, and verification techniques for
       agentic workflows.
     </p>
+
+    <div class="tags" aria-label="AI systems keywords">
+      <span><strong>Keywords:</strong></span>
+      <span>LLM agents</span>
+      <span>Authorization</span>
+      <span>Policy verification</span>
+      <span>Prompt compilation</span>
+      <span>Workflow preservation</span>
+      <span>Lean</span>
+      <span>Rocq</span>
+    </div>
 
     <h3>Representative Projects</h3>
 
@@ -179,11 +291,15 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     
 
     <li>
-      <strong>AgentFlow.</strong>
-      A formal authorization framework for AI agents based on information flow, security labels, and path-sensitive policies, 
-      enabling formal reasoning about secure agent interactions and policy enforcement.
-      <div class="project-links">
-        <span>Ongoing work</span>
+      <strong>Agenra.</strong>
+      A policy language and Lean-verified enforcement core for stateful LLM agent
+      authorization. Agenra tracks runtime resources and consumable permissions,
+      and uses simulation proofs to certify that policy revisions preserve
+      permitted workflows under stated assumptions. The framework treats
+      workflow preservation and safety as distinct properties.
+      <div class="project-publications">
+        <strong>Publications:</strong>{' '}
+        <a href="https://arxiv.org/abs/2608.22868">arXiv</a>
       </div>
     </li>
     </ul>
