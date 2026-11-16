@@ -12,6 +12,20 @@ export type Publication = {
 export const publications: Publication[] = [
   {
     year: 2026,
+    title: 'VellSSLH: Sound Type-Guided Selective Speculative Load Hardening for LLVM IR',
+    authors: 'Swarn Priya',
+    venue: 'arXiv',
+    href: 'https://arxiv.org/abs/2611.18463'
+  },
+  {
+    year: 2026,
+    title: 'DeCompCert: A Verified Decompiler for CompCert-Generated AArch64',
+    authors: 'Swarn Priya, Basavesh Ammanaghatta Shivakumar, Thomas Gilray, and Kristopher Micinski',
+    venue: 'arXiv',
+    href: 'https://arxiv.org/abs/2611.18055'
+  },
+  {
+    year: 2026,
     title: 'Agenra: A Language and Verified Core for Stateful LLM Agent Authorization',
     authors: 'Basavesh Ammanaghatta Shivakumar, Swarn Priya, and Peng Gao',
     venue: 'arXiv',
