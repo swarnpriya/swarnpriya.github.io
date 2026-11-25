@@ -125,10 +125,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     </li>
 
     <li id="decompcert">
-      <strong class="project-name">
-        <img src="/images/decompcert-logo.svg" alt="DeCompCert logo" width="64" height="64" />
-        DeCompCert.
-      </strong>
+      <strong>DeCompCert.</strong>
       A decompilation framework that reconstructs C from CompCert-generated AArch64 assembly through
       CompCert’s intermediate languages. It combines inference-guided reconstruction
       with formally verified transformations and translation validation, establishing
@@ -140,7 +137,10 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       </div>
       <div class="project-links">
         <strong>Website:</strong>{' '}
-        <a href="https://pawssec.github.io/decompcert_website/#team">DeCompCert</a>
+        <a class="project-website-link" href="https://pawssec.github.io/decompcert_website/#team">
+          <img src="/images/decompcert-logo.svg" alt="" width="40" height="40" />
+          DeCompCert
+        </a>
       </div>
     </li>
 
