@@ -952,16 +952,21 @@ p {
 }
 
 .project-name {
-  display: inline-flex;
+  display: flex;
   align-items: center;
-  gap: 0.4rem;
-  vertical-align: middle;
+  gap: 0.75rem;
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
 }
 
 .project-name img {
-  width: 2rem;
-  height: 2rem;
+  width: 4rem;
+  height: 4rem;
   flex-shrink: 0;
+}
+
+#decompcert {
+  scroll-margin-top: 2rem;
 }
 
 .project-links {
