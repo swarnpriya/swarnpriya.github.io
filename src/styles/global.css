@@ -951,6 +951,19 @@ p {
   margin-bottom: 1.25rem;
 }
 
+.project-name {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  vertical-align: middle;
+}
+
+.project-name img {
+  width: 2rem;
+  height: 2rem;
+  flex-shrink: 0;
+}
+
 .project-links {
   margin-top: 0.35rem;
   font-size: 0.9rem;
