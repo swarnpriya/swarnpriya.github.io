@@ -21,10 +21,12 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
       - name: Build and upload Astro website
-        uses: withastro/action@v4
+        uses: withastro/action@v6
+        with:
+          node-version: 26
 
   deploy:
     needs: build
@@ -37,7 +39,7 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5
 
 
 # Trigger deployment
